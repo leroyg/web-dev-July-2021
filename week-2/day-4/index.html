@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pikachu Carousel</title>
+    <style>
+      #window {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        overflow:hidden;
+      }
+
+      img {
+        width: 400px;
+        height: 400px;
+      }
+
+      #sliderWindow{
+        display: flex;
+      }
+
+      #buttonContainer{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: -100%;
+        height: 100%;
+      }
+
+    </style>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="window">
+      <div id="sliderWindow">
+        <img src="./images/pika1.png" alt="">
+        <img src="./images/pika2.png" alt="">
+        <img src="./images/pika3.png" alt="">
+      </div>
+
+      <div id="buttonContainer">
+        <button onclick="prevImage()">&#60;</button>
+        <button onclick="nextImage()">&#62;</button>
+      </div>
+
+    </div>
+    <script>
+      let sliderPosition = 0;
+
+      function prevImage() {
+        // select by getELementById and stor in var slider
+        const slider = document.getElementById('sliderWindow');
+        // increment position by 400 px
+        if (sliderPosition < 0 ) {
+          sliderPosition += 400;
+        }
+        // translate the slider by width (400px) of the image
+        slider.style.transform = `translateX(${sliderPosition}px)`;
+      }
+
+      function nextImage() {
+        // select by getElementById and stor in var slider
+        const slider = document.getElementById('sliderWindow');
+        // decrement the slider by 400px
+        if (sliderPosition > -800 ) {
+          sliderPosition += -400;
+        }
+        // translate the slider by width (-400px) of the image
+        slider.style.transform = `translateX(${sliderPosition}px)`;
+      }
+
+    </script>
+  </body>
+</html>

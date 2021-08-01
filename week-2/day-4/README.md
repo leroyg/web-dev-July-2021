@@ -13,6 +13,9 @@ EOD Sprint Retrospective
 - document object model (DOM)
 - document
 - JS Carousel
+- position
+- top 
+- left
 
 ## Where you do your work:
 https://github.com/Vets-In-Tech/week2HWJune2021
